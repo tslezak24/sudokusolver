@@ -11,9 +11,19 @@ def main():
         [".", "1", ".", "5", "4", "7", ".", ".", "3"],
         [".", "9", "6", ".", "3", "8", ".", "5", "1"]
         ]
-    print(board)
+    formatted_print(board)
 #    for row in range(9):
 #        for col in range(9):
 #            board[row][col] = input(f"Please enter number for position ({row}, {col})")
+
+def formatted_print(board):
+    for row in range(9):
+        row_string = ""
+        for col in range(9):
+            if len(row_string) == 0:
+                row_string += "|"
+            row_string += board[row][col] + "|"
+        print(row_string)
+    
     
 main()
