@@ -1,4 +1,4 @@
-from solver import Solver
+from solver import verify_currently_valid, solve 
 def main():
     board = [[""]*9]*9
     board = [
@@ -12,8 +12,8 @@ def main():
         ["4", ".", ".", ".", "8", "2", "9", ".", "."],
         [".", ".", "6", ".", ".", ".", ".", ".", "3"]
         ]
-    if Solver.verify_currently_valid(board):
-        if Solver.solve(board):
+    if verify_currently_valid(board):
+        if solve(board):
             formatted_print(board)
         else:
             print("Unsolvable Board")
