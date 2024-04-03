@@ -1,12 +1,13 @@
 from solver import verify_currently_valid, solve 
-from webhandler import get_board
+from webhandler import get_board, update_board
 
 def main():
-    html = open("boardhtml.txt", "r")
-    board = get_board(html)
+    board = get_board()
     if verify_currently_valid(board):
         if solve(board):
             formatted_print(board)
+            if update_board(board):
+                print("Your html output is ready.") 
         else:
             print("Unsolvable Board")
 
